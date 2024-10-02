@@ -1,13 +1,15 @@
 * {
     box-sizing: border-box;
 }
-.page{
+
+.page {
     width: 100vh;
     height: 100vh;
     display: flex;
     flex-direction: row;
 }
 .wall {
+
     background-color: red;
     width: 50px;
     height: 50px;
@@ -18,6 +20,7 @@
 }
 
 .arrow-up {
+
     width: 0;
     height: 0;
     border-left: 20px solid transparent;
@@ -32,6 +35,7 @@
     height: 15px;
     border: 1px solid black;
     position: absolute;
+    bottom: center;
     top: 83px; 
     left: 29px;
 
@@ -57,6 +61,7 @@
  }
 
  .volley-pitch {
+
 width: 20px;
 height: 30px;
 border: 1px solid black;
@@ -76,50 +81,37 @@ transform: rotateX(180deg);
  }
 
  .mywall2container {
+
+    width: 150px;
+    height: 150px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ }
+
+
+.mywall {
     background-color: blue;
-    width: 80px;
-    height:150px;
+    width: 60px;
+    height: 60px;
     border: 1px groove black;
-
-
+    border: 1px solid black;
     
 }
 
-.mywall {
-    background-color: red;
-    width: 50px;
-    height: 50px;
-    border: 1px solid black;
-    position: absolute;
-    bottom: 100px;
-    left: 9px;
-    top: 50px;
-}
-
-
 
  .myarrow-up {
-     width: 0;
-     height: 0;
+     width: 10%;
+     height: 10%;
      border-left: 30px solid transparent;
      border-right: 30px solid transparent;
      border-bottom: 30px solid brown;
-     position: top;
-     top: 20px;
-
+     
  }
 
- .mydoor {
-     width: 15px;
-     height: 25px;
-     border: 1px solid brown;
-     position: bottom right;
-     top: 80px;
-     left: 30px;
-     display: flex;
-     flex-direction: row;
 
- }
 
  .mywindow-container {
      width: 10px;
@@ -127,20 +119,13 @@ transform: rotateX(180deg);
      border: 1px solid brown;
      background-color: blueviolet;
      position: bottom right;
-     top: 50px;
-     left: 15px;
+     top: 100px;
      display: flex;
      flex-direction: row;
 
  }
 
 
- .mywindow {
-     width: 50%;
-     height: 100%;
-     border: 1px groove black;
-
- }
 
 
  .mypool {
@@ -149,8 +134,7 @@ transform: rotateX(180deg);
      background-color: aqua;
      border: 1px groove black;
      position: absolute;
-     top: 80%;
-
+     top: 100%; 
  }
 
  .mypinetree {
@@ -159,9 +143,8 @@ transform: rotateX(180deg);
      border-left: 20px solid transparent;
      border-right: 20px solid transparent;
      border-bottom: 70px solid green;
-
-
- }
+    
+}
 
  .mytree-2 {
      width: 0px;
@@ -169,15 +152,17 @@ transform: rotateX(180deg);
      border-left: 5px solid transparent;
      border-right: 5px solid transparent;
      border-bottom: 10px solid black;
-
-
- }
+}
 
  .mypine-container {
+
      position: absolute;
-     left: 100px;
+     left: 90px;
      display: flex;
      flex-direction: column;
      justify-content: center;
      align-items: center;
  }
+
+
+ 

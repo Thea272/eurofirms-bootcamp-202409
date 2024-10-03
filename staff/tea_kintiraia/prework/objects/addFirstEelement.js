@@ -1,43 +1,28 @@
 /*
-array.shift()
-elimina el primer elemento y lo devuelve y modifica la longitud
+array.unshift
 */
-function removeFirstElement(object) {
-    //guardar el valor de la propiedad que vamos a eliminar -> numbers[0]<-
-    var result = object[0]
-    //para borrar la primera propiedad moveriamos todas las de más propiedades -> las propiedades a partir de numbers[0]<-
-    for (var i = 0; i < object.length - 1; i++) {
-        //numbers[0] = numbers[1]
-        //numbers[1] = numbers[2]
-        object[i] = object[i + 1]
-        //numbers[0] = numbers[1]
-        //numbers[1] = numbers[2]
-    }
-    //eliminar la última propiedad -> numbers.length
-    object.length--
-    return result//la primera propiedad
+
+function addFirstElement(object, element) {
+//empujae los elementos existentes 1a posición adelante
+for (var i = object.length; i > 0; i--) {
+//numbers -> {numbers = { 0: 0, 1: 1, 2: 2, length: 3}
+//i = 3 -> 3 > 0 -> numbers[3]= 2 -> numbers {0: 0, 1: 1, 2: 2, 3: 2} -> i-- ->i = 2
+//i = 2 -> 2 > 0 -> numbers[2]= 1 -> numbers {0: 0, 1: 1, 2: 1, 3: 2} -> i-- ->i = 1
+//i = 1 -> 1 > 0 -> numbers[1]= 0 -> numbers {0: 0, 1: 0, 2: 1, 3: 2} -> i-- ->i = 0
+//i = 0 -> 0 > 0 -> numbers {0: 0, 1: 0, 2: 1, 3: 2} 
+object[i]=object[i -1]
 }
+ //añadimos el elemento -> element -< en la primera posición -> object[0] <- en el objeto -> object <-
+//numbers[0] = 111
 
-// var numbers = {
-// 0:1,
-// 1:2
-// length : 2
-//
-//} return 0
+object[0] = element
 
-//numbers = {
-// 0: 1,
-// 1: 1,
-// 2: 2,
-// length: 3
-//}
+//actualizar y devolver el nuevo length -> object.lenght <-
 
-// numbers = {
-// 0: 1,
-// 1: 2,
-// 2: 2,
-// length: 3
-// }
+object.length++
+
+return object.length
+}
 
 var numbers = {
     0: 0,
@@ -45,30 +30,34 @@ var numbers = {
     2: 2,
     length: 3
 }
-console.log("numbers before shift", numbers)
+/* numbers[0] = 111
 
-console.log("first element of numbers", removeFirstElement(numbers))
+numbers {
+    0: 111,
+    1: 1,
+    2: 2,
+    length: 3
+}*/
+ 
+// //resultado esperado de addFirstElement(numbers, 111)
 
-console.log("numbers after shift", numbers)
+//numbers { 
+// 0 : 111,
+// 1 : 0,
+// 2 : 1,
+// 3 : 2,
+// length: 4
+// }
+console.log("numbers antes de añadir 111", numbers)
 
-console.log("first element of numbers after second shift", removeFirstElement(number))
 
-console.log("TEST Array.prototype.push")
-console.log("CASE add 400 to nunms")
-var nums = [100, 200, 300]
-var length = nums.push(400)
-console.log(nums)
 
-//[100, 200, 300, 400] (4)
-console.log(length)
-//4
+console.log("longitud después de añadir 111", addFirstElement(numbers, 111))
 
-console.log("CASE add F to chars")
+console.log("numbers después de añadir 111", numbers)
 
-var chars = ["A", "B", "C", "D", "E"]
-var length = chars.push("F")
-console.log(chars)
-// ["A", "B", "C", "D", "E", "F"] (6)
-console.log(length)
-// 6
 
+
+console.log("longitud después de añadir 222", addFirstElement(numbers, 222))
+
+console.log("numbers después de añadir 222", numbers)
